@@ -6,6 +6,7 @@ import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -37,8 +38,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
@@ -112,12 +118,24 @@ public class MenuActivity extends AppCompatActivity {
         // Check if UserStats are enabled:
         UsageStatsManager mUsageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
         long time = System.currentTimeMillis();
-        List stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, time - 1000 * 10, time);
+        List stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST,time - 1000 * 10, time);
+        Log.d(TAG,"Fetched Stats : "+stats.size());
         if (stats == null || stats.isEmpty()) {
             Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
             startActivity(intent);
-        } else
+        } else {
+
+//            List<AppUsageEntry> st = new ArrayList<>();
+//            for(int i=0;i<stats.size();i++)
+//            {
+//               UsageStats currStat = (UsageStats) stats.get(i);
+//                if(currStat.getTotalTimeInForeground()>0)
+//                st.add(new AppUsageEntry(currStat.getPackageName(), currStat.getTotalTimeInForeground()));
+//            }
+//
+//            Logging.appendLog(st,Logging.LOG_FILE_APP_USAGE);
             hasPermissions = true;
+        }
 
 
         if (!hasPermissions(MenuActivity.this, permissions)) {
@@ -246,6 +264,25 @@ public class MenuActivity extends AppCompatActivity {
         RefreshServiceGUIInformation();
 
         Toast.makeText(this, "Study stopped", Toast.LENGTH_SHORT).show();
+
+        UsageStatsManager mUsageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
+        long time = System.currentTimeMillis();
+        List stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST,time - 1000 * 10, time);
+        Log.d(TAG,"Fetched Stats : "+stats.size());
+        if (stats == null || stats.isEmpty()) {
+            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
+            startActivity(intent);
+        } else {
+            List<AppUsageEntry> st = new ArrayList<>();
+            for(int i=0;i<stats.size();i++)
+            {
+               UsageStats currStat = (UsageStats) stats.get(i);
+                if(currStat.getTotalTimeInForeground()>0)
+                st.add(new AppUsageEntry(currStat.getPackageName(), currStat.getTotalTimeInForeground()));
+            }
+            Logging.appendLog(st,Logging.LOG_FILE_APP_USAGE);
+        }
+
 //        new AlertDialog.Builder(MenuActivity.this)
 //                .setTitle("Studie Stoppen")
 //                .setMessage("Bitte Passwort eingeben")

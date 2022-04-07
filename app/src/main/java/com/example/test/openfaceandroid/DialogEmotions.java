@@ -3,7 +3,9 @@ package com.example.test.openfaceandroid;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.RatingBar;
 import android.widget.Switch;
 
@@ -21,13 +23,14 @@ public class DialogEmotions extends AppCompatActivity {
     }
 
     public void btnSubmit_onClick(View v) {
-        Switch swAngry = (Switch) findViewById(R.id.swAngry);
-        Switch swDigust = (Switch) findViewById(R.id.swDisgusted);
-        Switch swFeared = (Switch) findViewById(R.id.swFeared);
-        Switch swHappy = (Switch) findViewById(R.id.swHappy);
-        Switch swNeutral = (Switch) findViewById(R.id.swNeutral);
-        Switch swSad = (Switch) findViewById(R.id.swSad);
-        Switch swSurprised = (Switch) findViewById(R.id.swSurprised);
+        Log.d("DialogEmotions","btn listener working");
+        RadioButton swAngry = (RadioButton) findViewById(R.id.swAngry);
+        RadioButton swDigust = (RadioButton) findViewById(R.id.swDisgusted);
+        RadioButton swFeared = (RadioButton) findViewById(R.id.swFeared);
+        RadioButton swHappy = (RadioButton) findViewById(R.id.swHappy);
+        RadioButton swNeutral = (RadioButton) findViewById(R.id.swNeutral);
+        RadioButton swSad = (RadioButton) findViewById(R.id.swSad);
+        RadioButton swSurprised = (RadioButton) findViewById(R.id.swSurprised);
 
         int ratingAngry = swAngry.isChecked() ? 1 : 0;
         int ratingDisgust = swDigust.isChecked() ? 1 : 0;
