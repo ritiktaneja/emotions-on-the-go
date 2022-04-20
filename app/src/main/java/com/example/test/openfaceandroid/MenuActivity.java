@@ -67,7 +67,6 @@ public class MenuActivity extends AppCompatActivity {
     private final static byte[][] buffers = new byte[2][BYTESIZE];
 
     private static boolean isPaused;
-    private static boolean hasPermissions;
 
     private static final int REQUEST_CAMERA_PERMISSION = 200;
 
@@ -94,7 +93,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Thread.setDefaultUncaughtExceptionHandler(onRuntimeError);
-        hasPermissions = false;
+
         this.activity = this;
 
         context = this.getApplicationContext();
@@ -109,15 +108,7 @@ public class MenuActivity extends AppCompatActivity {
 
         RefreshServiceGUIInformation();
 
-        // Check if UserStats are enabled:
-        UsageStatsManager mUsageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
-        long time = System.currentTimeMillis();
-        List stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, time - 1000 * 10, time);
-        if (stats == null || stats.isEmpty()) {
-            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
-            startActivity(intent);
-        } else
-            hasPermissions = true;
+
 
 
         if (!hasPermissions(MenuActivity.this, permissions)) {
