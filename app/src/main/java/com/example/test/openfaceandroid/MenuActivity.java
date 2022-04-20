@@ -114,30 +114,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
         RefreshServiceGUIInformation();
-
-        // Check if UserStats are enabled:
-        UsageStatsManager mUsageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
-        long time = System.currentTimeMillis();
-        List stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST,time - 1000 * 10, time);
-        Log.d(TAG,"Fetched Stats : "+stats.size());
-        if (stats == null || stats.isEmpty()) {
-            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
-            startActivity(intent);
-        } else {
-
-//            List<AppUsageEntry> st = new ArrayList<>();
-//            for(int i=0;i<stats.size();i++)
-//            {
-//               UsageStats currStat = (UsageStats) stats.get(i);
-//                if(currStat.getTotalTimeInForeground()>0)
-//                st.add(new AppUsageEntry(currStat.getPackageName(), currStat.getTotalTimeInForeground()));
-//            }
-//
-//            Logging.appendLog(st,Logging.LOG_FILE_APP_USAGE);
-            hasPermissions = true;
-        }
-
-
+        
         if (!hasPermissions(MenuActivity.this, permissions)) {
             ActivityCompat.requestPermissions(MenuActivity.this, permissions, REQUEST_CAMERA_PERMISSION);
         }
@@ -264,47 +241,5 @@ public class MenuActivity extends AppCompatActivity {
         RefreshServiceGUIInformation();
 
         Toast.makeText(this, "Study stopped", Toast.LENGTH_SHORT).show();
-
-        UsageStatsManager mUsageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
-        long time = System.currentTimeMillis();
-        List stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST,time - 1000 * 10, time);
-        Log.d(TAG,"Fetched Stats : "+stats.size());
-        if (stats == null || stats.isEmpty()) {
-            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
-            startActivity(intent);
-        } else {
-            List<AppUsageEntry> st = new ArrayList<>();
-            for(int i=0;i<stats.size();i++)
-            {
-               UsageStats currStat = (UsageStats) stats.get(i);
-                if(currStat.getTotalTimeInForeground()>0)
-                st.add(new AppUsageEntry(currStat.getPackageName(), currStat.getTotalTimeInForeground()));
-            }
-            Logging.appendLog(st,Logging.LOG_FILE_APP_USAGE);
-        }
-
-//        new AlertDialog.Builder(MenuActivity.this)
-//                .setTitle("Studie Stoppen")
-//                .setMessage("Bitte Passwort eingeben")
-//                .setView(input)
-//                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int whichButton) {
-//                        Editable text = input.getText();
-//                        if (true || text.toString().equals("FinishStudy")) {
-//                            stopService(new Intent(MenuActivity.this, CameraService.class));
-//
-//                            Toast.makeText(MenuActivity.this, "Stop", Toast.LENGTH_SHORT).show();
-//                            RefreshServiceGUIInformation();
-//                        } else
-//                            Toast.makeText(MenuActivity.this, "Falsches Passwort", Toast.LENGTH_SHORT).show();
-//
-//                        // deal with the editable
-//                    }
-//                })
-//                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int whichButton) {
-//                        // Do nothing.
-//                    }
-//                }).show();
     }
 }
