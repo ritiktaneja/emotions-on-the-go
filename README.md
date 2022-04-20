@@ -27,22 +27,14 @@ The app requires at least Android 5.0 (Lollipop).
 <!-- // wait for gradle build -->
 
 <!-- // Steps to create a new database: -->
-## Create a Firebase database
-Adding Firebase to your app involves tasks both in the Firebase console and in your open Android project (for example, you download Firebase config files from the console, then move them into your Android project). 
-Login in [Google Firebase](https://firebase.google.com/) and go to the console.
+## Connect a Firebase database
+Follow this guide to connect the firebase database with your app: https://firebase.google.com/docs/android/setup
 
-Step 1) Create a Firebase project
-
-Step 2: Register your app with Firebase
-To use Firebase in your Android app, you need to register your app with your Firebase project. Registering your app is often called "adding" your app to your project.
-    1) Go to the Firebase console.
-    2) In the center of the project overview page, click the Android icon (plat_android) or Add app to launch the setup workflow.
-    3) Enter your app's package name in the Android package name field.
-    4) Click Register app.
 <!-- // update the database -->
 
 <!-- // Building an apk -->
-
+## Building the apk
+Steps to build an apk in android studio: Build menu -> Build Bundle(s)/APK(s) -> Build APK(s) 
 <!-- // FER analytics -->
 
 ## Directions to use the app
