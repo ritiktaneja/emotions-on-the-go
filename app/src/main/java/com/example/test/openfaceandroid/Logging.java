@@ -62,69 +62,6 @@ class Emotion {
     }
 }
 
-class AppUsageEntry
-{
-    public String getPackageName() {
-        return packageName;
-    }
-
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
-
-    public long getTotalUsage() {
-        return totalUsage;
-    }
-
-    public void setTotalUsage(long totalUsage) {
-        this.totalUsage = totalUsage;
-    }
-
-    String packageName;
-    long totalUsage;
-    AppUsageEntry(String packageName,long totalUsage)
-    {
-        this.packageName = packageName;
-        this.totalUsage = totalUsage;
-    }
-
-}
-class AppUsage {
-    String timestamp;
-    String STUDY_ID;
-    List<AppUsageEntry> stats;
-    AppUsage(String timestamp, String STUDY_ID,List<AppUsageEntry> st)
-    {
-        this.timestamp = timestamp;
-        this.STUDY_ID = STUDY_ID;
-        this.stats= st;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getSTUDY_ID() {
-        return STUDY_ID;
-    }
-
-    public void setSTUDY_ID(String STUDY_ID) {
-        this.STUDY_ID = STUDY_ID;
-    }
-
-    public List<AppUsageEntry> getStats() {
-        return stats;
-    }
-
-    public void setStats(List<AppUsageEntry> stats) {
-        this.stats = stats;
-    }
-
-}
 
 public class Logging {
 
@@ -153,7 +90,6 @@ public class Logging {
     public static String ACTION_COLLECTIONS = "ACTION";
     public static String WEATHER_COLLECTIONS = "WEATHER";
     public static String EMOTION_RATING_COLLECTIONS = "EMOTION_RATING";
-    public static String APP_USAGE_COLLECTION = "APP_USAGE";
 
 
 
@@ -169,31 +105,14 @@ public class Logging {
         LOG_FILE_ACT = LOG_PATH + "/OFA_ACT_" + timestamp + ".log";
         LOG_FILE_WEATHER = LOG_PATH + "/OFA_WEATHER_" + timestamp + ".log";
         LOG_FILE_USER_EMOTIONRATING = LOG_PATH + "/OFA_USEREMOTRATING_" + timestamp + ".log";
-        LOG_FILE_APP_USAGE = "APP_USAGE";
+
     }
 
     public static void appendLog(String text, String file) {
         appendLog(text, file, true, true);
     }
 
-    public static void appendLog(List<AppUsageEntry> entries,String file) {
-        if (db == null)
-        {
-            Log.d(TAG,"Unable to set up db connection");
-            return;
-        }
-        if ( file == LOG_FILE_APP_USAGE)
-        {
-            DatabaseReference appUsageCollection = db.getReference(APP_USAGE_COLLECTION);
 
-            appUsageCollection.push().setValue(new AppUsage(GetCurrentTimeStamp(true),STUDY_ID,entries)).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                        Log.d(TAG,"App usage pushed to database");
-                }
-            });
-        }
-    }
 
     public static void appendLog(String text, String file, boolean append, boolean timestamp) {
 
