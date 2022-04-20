@@ -40,7 +40,13 @@ Steps to build an apk in android studio: Build menu -> Build Bundle(s)/APK(s) ->
 <!-- // FER analytics -->
 ## Directions to use the app
 
-<img src="" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0002.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0003.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0004.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0005.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0006.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/open.png" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/open2.png" style="float: left; margin-right: 10px;" width="200" height="400"/>
 
 
 
