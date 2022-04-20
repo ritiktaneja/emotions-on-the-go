@@ -35,9 +35,14 @@ Follow this guide to connect the firebase database with your app: https://fireba
 <!-- // Building an apk -->
 ## Building the apk
 Steps to build an apk in android studio: Build menu -> Build Bundle(s)/APK(s) -> Build APK(s) 
-<!-- // FER analytics -->
 
+
+<!-- // FER analytics -->
 ## Directions to use the app
+
+<img src="" style="float: left; margin-right: 10px;" width="200" height="400"/>
+
+
 
 
 ## Citing the App and the Paper
