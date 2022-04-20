@@ -8,13 +8,13 @@ DOI: https://doi.org/10.1145/3399715.3399928
 <!-- // info of different branches: -->
 There are 3 different branches, each containing a slight variation of the app.
 <!--  Multi-options selection of user emotions, Single select, app usage data -->
-1) Branch 1 contains the implementation of the app which provides multiple options for the actual(ground-truth) emotions of the user.
+1) [release/multi-option-select](https://github.com/ritiktaneja/emotions-on-the-go/tree/release/multi-option-select) branch contains the implementation of the app which provides multiple options for the actual(ground-truth) emotions of the user.
     <img src="./screenshots/IMG-20220420-WA0002.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
 
-2) Branch 2 contains the implementation of the app which provides single options for the actual emotion of the user. 
+2) [release/single-option-select](https://github.com/ritiktaneja/emotions-on-the-go/tree/release/single-option-select) branch contains the implementation of the app which provides single options for the actual emotion of the user. 
     <img src="./screenshots/IMG-20220420-WA0006.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
 
-3) Branch 3 contatins an upgraded version of the branch 2 app in which the app usage data of the user is also sent to the database. 
+3) [single-option-and-app-usage-collection](https://github.com/ritiktaneja/emotions-on-the-go/tree/release/single-option-and-app-usage-collection) contatins an upgraded version of the single-option-select app in which the app usage data of the user is also sent to the database. 
 
 The app requires at least Android 5.0 (Lollipop).
 
