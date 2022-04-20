@@ -9,7 +9,11 @@ DOI: https://doi.org/10.1145/3399715.3399928
 There are 3 different branches, each containing a slight variation of the app.
 <!--  Multi-options selection of user emotions, Single select, app usage data -->
 1) Branch 1 contains the implementation of the app which provides multiple options for the actual(ground-truth) emotions of the user.
+    <img src="./screenshots/IMG-20220420-WA0002.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+
 2) Branch 2 contains the implementation of the app which provides single options for the actual emotion of the user. 
+    <img src="./screenshots/IMG-20220420-WA0006.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+
 3) Branch 3 contatins an upgraded version of the branch 2 app in which the app usage data of the user is also sent to the database. 
 
 The app requires at least Android 5.0 (Lollipop).
@@ -39,17 +43,19 @@ Steps to build an apk in android studio: Build menu -> Build Bundle(s)/APK(s) ->
 
 <!-- // FER analytics -->
 ## Directions to use the app
+- Install the app and give permissions for the camera usage.
+- Press the Start/Continue study to begin the data collection for 10 seconds.
+- To manually stop the data collection, press Stop Study button.
+- After collecting the data, click on the 'Rate current emotions' notification to input the actual user emotions.
+- In case of App usage collection version of the app, give Usage Access permissions to the app.
 
-<img src="./screenshots/IMG-20220420-WA0002.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
-<img src="./screenshots/IMG-20220420-WA0003.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<div>
 <img src="./screenshots/IMG-20220420-WA0004.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
-<img src="./screenshots/IMG-20220420-WA0005.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
-<img src="./screenshots/IMG-20220420-WA0006.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
-<img src="./screenshots/open.png" style="float: left; margin-right: 10px;" width="200" height="400"/>
-<img src="./screenshots/open2.png" style="float: left; margin-right: 10px;" width="200" height="400"/>
-
-
-
+<img src="./screenshots/IMG-20220420-WA0003.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+</div>
+<!-- <img src="./screenshots/IMG-20220420-WA0005.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/> -->
+<!-- <img src="./screenshots/open.png" style="float: left; margin-right: 10px;" width="200" height="400"/> -->
+<!-- <img src="./screenshots/open2.png" style="float: left; margin-right: 10px;" width="200" height="400"/> -->
 
 ## Citing the App and the Paper
 
