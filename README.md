@@ -1,10 +1,39 @@
 # App Description
 
-This repository contains the app to the paper "Emotions on the Go: Mobile Emotion Assessment in Real-Time using Facial Expressions".
+This repository contains the modified versions of the [Emotion-on-the-go app](https://github.com/TKosch/emotions-on-the-go) by [Tkosch](https://github.com/TKosch) which is based on the paper "Emotions on the Go: Mobile Emotion Assessment in Real-Time using Facial Expressions".
 
 DOI: https://doi.org/10.1145/3399715.3399928
 
+There are 3 different branches, each containing a slight variation of the app.
+<!--  Multi-options selection of user emotions, Single select, app usage data -->
+1) Branch 1 contains the implementation of the app which provides multiple options for the actual(ground-truth) emotions of the user.
+2) Branch 2 contains the implementation of the app which provides single options for the actual emotion of the user. 
+3) Branch 3 contatins an upgraded version of the branch 2 app in which the app usage data of the user is also sent to the database. 
+
 The app requires at least Android 5.0 (Lollipop).
+
+## Installation
+<!-- installing android studio -->
+### For installing android studio follow this guide: https://developer.android.com/studio/install
+
+### Clone the repository
+```
+    git clone https://github.com/ritiktaneja/emotions-on-the-go.git
+```
+### Open the project in Android studio
+<!-- // wait for gradle build
+
+// info of different branches:
+
+// update the database
+// Steps to create a new database:
+
+// Building an apk
+
+// FER analytics
+ -->
+
+
 
 ## Citing the App and the Paper
 
