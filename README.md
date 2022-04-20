@@ -9,10 +9,10 @@ DOI: https://doi.org/10.1145/3399715.3399928
 There are 3 different branches, each containing a slight variation of the app.
 <!--  Multi-options selection of user emotions, Single select, app usage data -->
 1) [release/multi-option-select](https://github.com/ritiktaneja/emotions-on-the-go/tree/release/multi-option-select) branch contains the implementation of the app which provides multiple options for the actual(ground-truth) emotions of the user.
-    <img src="./screenshots/IMG-20220420-WA0002.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0002.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
 
 2) [release/single-option-select](https://github.com/ritiktaneja/emotions-on-the-go/tree/release/single-option-select) branch contains the implementation of the app which provides single options for the actual emotion of the user. 
-    <img src="./screenshots/IMG-20220420-WA0006.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
+<img src="./screenshots/IMG-20220420-WA0006.jpg" style="float: left; margin-right: 10px;" width="200" height="400"/>
 
 3) [single-option-and-app-usage-collection](https://github.com/ritiktaneja/emotions-on-the-go/tree/release/single-option-and-app-usage-collection) contatins an upgraded version of the single-option-select app in which the app usage data of the user is also sent to the database. 
 
@@ -40,8 +40,6 @@ Follow this guide to connect the firebase database with your app: https://fireba
 ## Building the apk
 Steps to build an apk in android studio: Build menu -> Build Bundle(s)/APK(s) -> Build APK(s) 
 
-
-<!-- // FER analytics -->
 ## Directions to use the app
 - Install the app and give permissions for the camera usage.
 - Press the Start/Continue study to begin the data collection for 10 seconds.
@@ -57,8 +55,12 @@ Steps to build an apk in android studio: Build menu -> Build Bundle(s)/APK(s) ->
 <!-- <img src="./screenshots/open.png" style="float: left; margin-right: 10px;" width="200" height="400"/> -->
 <!-- <img src="./screenshots/open2.png" style="float: left; margin-right: 10px;" width="200" height="400"/> -->
 
-## Citing the App and the Paper
 
+<!-- FER analytics -->
+## Analysis of data
+A script to fetch the data from Firebase Database and perform the confusion matrix analysis is given [here](./Analysis/FER_Analytics.ipynb).
+
+## Citing the App and the Paper
 Below are the BibTex entries to cite the app and the paper
 
 ```
