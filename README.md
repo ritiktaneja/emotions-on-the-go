@@ -4,6 +4,8 @@ This repository contains the modified versions of the [Emotion-on-the-go app](ht
 
 DOI: https://doi.org/10.1145/3399715.3399928
 
+
+<!-- // info of different branches: -->
 There are 3 different branches, each containing a slight variation of the app.
 <!--  Multi-options selection of user emotions, Single select, app usage data -->
 1) Branch 1 contains the implementation of the app which provides multiple options for the actual(ground-truth) emotions of the user.
@@ -21,18 +23,29 @@ The app requires at least Android 5.0 (Lollipop).
     git clone https://github.com/ritiktaneja/emotions-on-the-go.git
 ```
 ### Open the project in Android studio
-<!-- // wait for gradle build
+- Wait for the gradle scripts to execute.
+<!-- // wait for gradle build -->
 
-// info of different branches:
+<!-- // Steps to create a new database: -->
+## Create a Firebase database
+Adding Firebase to your app involves tasks both in the Firebase console and in your open Android project (for example, you download Firebase config files from the console, then move them into your Android project). 
+Login in [Google Firebase](https://firebase.google.com/) and go to the console.
 
-// update the database
-// Steps to create a new database:
+Step 1) Create a Firebase project
 
-// Building an apk
+Step 2: Register your app with Firebase
+To use Firebase in your Android app, you need to register your app with your Firebase project. Registering your app is often called "adding" your app to your project.
+    1) Go to the Firebase console.
+    2) In the center of the project overview page, click the Android icon (plat_android) or Add app to launch the setup workflow.
+    3) Enter your app's package name in the Android package name field.
+    4) Click Register app.
+<!-- // update the database -->
 
-// FER analytics
- -->
+<!-- // Building an apk -->
 
+<!-- // FER analytics -->
+
+## Directions to use the app
 
 
 ## Citing the App and the Paper
